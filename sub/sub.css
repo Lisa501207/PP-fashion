@@ -262,33 +262,89 @@ main{
 }
 
 @media (max-width:600px){
-  .result-container{
-    padding:1.5rem;
+
+  body{
+    padding:1rem 0.5rem;
   }
 
+  main{
+    width:100%;
+  }
+
+  .result-container{
+    padding:1.25rem 1rem;
+    border-radius:6px;
+  }
+
+  /* 診断フォーム */
   .search-form{
-    grid-template-columns:1fr 1fr;
-    gap:0.5rem;
+    grid-template-columns:1fr;
+    gap:0.75rem;
+  }
+
+  .field{
+    font-size:0.9rem;
+  }
+
+  .field select{
+    min-height:46px;
   }
 
   .search-btn{
     width:100%;
+    min-height:46px;
   }
-  
+
+  /* タイトル */
   .result-container h1{
     font-size:1.5rem;
+    line-height:1.4;
   }
-  
+
+  .intro-box{
+    font-size:0.9rem;
+    line-height:1.8;
+  }
+
+  /* 結果 */
+  .style-card{
+    padding:1rem;
+    font-size:1.15rem;
+  }
+
+  /* 写真 */
   .photo-grid{
-    grid-template-columns:repeat(2, 1fr);
-    gap:0.75rem;
+    grid-template-columns:repeat(2,1fr);
+    gap:0.5rem;
   }
 
+  /* 色 */
   .color-grid{
-    grid-template-columns:repeat(6, minmax(0, 1fr));
-    gap:0.4rem;
+    grid-template-columns:repeat(6,1fr);
+    gap:0.35rem;
   }
 
+  /* PC情報 */
+  .pc-grid{
+    grid-template-columns:1fr;
+  }
+
+  .pc-card{
+    padding:0.9rem;
+  }
+
+  .pc-card p{
+    font-size:0.9rem;
+  }
+
+  /* 戻るボタン */
+  .back-btn{
+    display:block;
+    width:100%;
+    text-align:center;
+    padding:0.9rem 1rem;
+  }
+}
   .pc-grid{
     grid-template-columns:1fr;
   }
