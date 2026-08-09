@@ -256,3 +256,50 @@ article.text-black p{
 .section:nth-child(odd) article{
     text-align:right;
 }
+
+@media (max-width: 600px) {
+
+  article {
+    height: auto;
+    min-height: 100vh;
+    padding: 3rem 1.2rem;
+  }
+
+  h1 {
+    font-size: 2.8rem;
+    line-height: 1.1;
+  }
+
+  article p {
+    font-size: 1rem;
+    line-height: 1.7;
+    margin: 1rem 0 0;
+    max-width: 100%;
+  }
+
+  .section {
+    display: flex;
+    flex-direction: column !important;
+    padding: 2rem 1.2rem !important;
+  }
+
+  .section article {
+    width: 100%;
+    text-align: center !important;
+  }
+
+  .section img {
+    width: min(80vw, 375px);
+    height: auto;
+    margin-top: 1.5rem;
+  }
+
+  article.hero h1 {
+    font-size: 2rem;
+  }
+
+  article.hero p {
+    font-size: 0.9rem;
+    line-height: 1.7;
+  }
+}
