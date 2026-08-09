@@ -1,0 +1,295 @@
+*{
+  box-sizing:border-box;
+}
+
+html,body{
+  height:100%;
+  margin:0;
+  padding:0;
+}
+
+body{
+  background:#f5f5f5;
+  color:#333;
+  font-family:"Kaisei HarunoUmi", serif;
+  padding:2rem 1rem;
+  min-height:100vh;
+}
+
+main{
+  width:100%;
+  max-width:980px;
+  margin:0 auto;
+}
+
+.result-container{
+  background:#fff;
+  color:#333;
+  padding:2.25rem;
+  border-radius:8px;
+  box-shadow:0 2px 8px rgba(0,0,0,0.1);
+  text-align:center;
+}
+
+.search-box{
+  margin:0 0 2rem;
+  padding-bottom:2rem;
+  border-bottom:1px solid #ddd;
+}
+
+.search-form{
+  display:grid;
+  grid-template-columns:minmax(0, 1.15fr) minmax(0, 1.25fr) minmax(0, 1.3fr) 120px;
+  gap:0.75rem;
+  align-items:end;
+}
+
+.field{
+  display:flex;
+  flex-direction:column;
+  gap:.5rem;
+  text-align:left;
+  font-size:.95rem;
+  color:#555;
+  min-width:0;
+}
+
+.field span{
+  font-weight:700;
+  line-height:1.3;
+}
+
+.field select{
+  width:100%;
+  min-height:44px;
+  border-radius:4px;
+  border:1px solid #ddd;
+  padding:0.6rem 0.8rem;
+  background:#fff;
+  color:#333;
+  font:inherit;
+}
+
+.search-btn{
+  width:120px;
+  min-height:44px;
+  border-radius:4px;
+  border:none;
+  background:#333;
+  color:#fff;
+  font-weight:700;
+  cursor:pointer;
+  font:inherit;
+  transition:background 0.2s ease;
+}
+
+.search-btn:hover{
+  background:#555;
+}
+
+.result-container h1{
+  font-size:2rem;
+  margin:0 0 1rem;
+  color:#333;
+  font-weight:700;
+}
+
+.intro-box{
+  text-align:left;
+  margin:0 0 1.5rem;
+  color:#444;
+  line-height:1.8;
+  font-size:0.98rem;
+}
+
+.intro-box p{
+  margin:0 0 0.65rem;
+}
+
+.intro-box p:last-child{
+  margin-bottom:0;
+}
+
+.result-box{
+  margin:2rem 0;
+}
+
+.result-box h2{
+  font-size:1.2rem;
+  color:#666;
+  margin:0 0 1.5rem;
+  font-weight:700;
+}
+
+.style-card{
+  background:#f9f9f9;
+  color:#333;
+  padding:1.5rem;
+  border-radius:8px;
+  border:1px solid #ddd;
+  margin-bottom:2rem;
+  font-size:1.5rem;
+  font-weight:700;
+}
+
+.result-photo{
+  margin-top:2rem;
+}
+
+.photo-grid{
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:1rem;
+  margin-bottom:1rem;
+  align-items:start;
+}
+
+.result-link{
+  display:flex;
+  aspect-ratio:3/4;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+  background:#f0f0f0;
+  border-radius:8px;
+}
+
+.result-image{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  border-radius:8px;
+  border:1px solid #e0e0e0;
+  transition:transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.result-link:hover .result-image,
+.result-link:focus-visible .result-image{
+  transform:translateY(-2px);
+  box-shadow:0 8px 18px rgba(0,0,0,0.12);
+}
+
+.color-section{
+  margin-top:1.25rem;
+}
+
+.color-title{
+  margin:0 0 0.75rem;
+  font-size:0.95rem;
+  font-weight:700;
+  color:#666;
+}
+
+.color-grid{
+  display:grid;
+  grid-template-columns:repeat(6, minmax(0, 1fr));
+  gap:0.5rem;
+}
+
+.color-swatch{
+  aspect-ratio:1;
+  border-radius:50%;
+  border:1px solid #d7d7d7;
+  background:#e9e9e9;
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,0.8);
+}
+
+.result-detail{
+  margin:1rem 0 0;
+  font-size:0.9rem;
+  color:#666;
+}
+
+.pc-section{
+  margin-top:2.5rem;
+  text-align:left;
+}
+
+.pc-section h2{
+  margin:0 0 0.9rem;
+  font-size:1.35rem;
+  color:#333;
+}
+
+.pc-lead{
+  margin:0 0 1.25rem;
+  color:#555;
+  line-height:1.8;
+}
+
+.pc-grid{
+  display:grid;
+  grid-template-columns:repeat(2, minmax(0, 1fr));
+  gap:1rem;
+}
+
+.pc-card{
+  background:#f9f9f9;
+  border:1px solid #e3e3e3;
+  border-radius:8px;
+  padding:1rem 1.1rem;
+}
+
+.pc-card h3{
+  margin:0 0 0.5rem;
+  font-size:1rem;
+  color:#333;
+}
+
+.pc-card p{
+  margin:0;
+  color:#555;
+  line-height:1.7;
+}
+
+.action-box{
+  margin-top:2rem;
+}
+
+.back-btn{
+  display:inline-block;
+  background:#333;
+  color:#fff;
+  padding:0.75rem 1.5rem;
+  border-radius:4px;
+  text-decoration:none;
+  font-weight:500;
+  transition:background 0.2s ease;
+}
+
+.back-btn:hover{
+  background:#555;
+}
+
+@media (max-width:600px){
+  .result-container{
+    padding:1.5rem;
+  }
+
+  .search-form{
+    grid-template-columns:1fr 1fr;
+    gap:0.5rem;
+  }
+
+  .search-btn{
+    width:100%;
+  }
+  
+  .result-container h1{
+    font-size:1.5rem;
+  }
+  
+  .photo-grid{
+    grid-template-columns:repeat(2, 1fr);
+    gap:0.75rem;
+  }
+
+  .color-grid{
+    grid-template-columns:repeat(6, minmax(0, 1fr));
+    gap:0.4rem;
+  }
+
+  .pc-grid{
+    grid-template-columns:1fr;
+  }
+}

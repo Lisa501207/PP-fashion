@@ -1,0 +1,258 @@
+@import url('https://fonts.googleapis.com/css2?family=Kaisei+HarunoUmi&display=swap');
+.kaisei-harunoumi-regular {
+  font-family: "Kaisei HarunoUmi", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+
+*{box-sizing:border-box}
+html,body{height:100%;}
+body{
+  background:var(--bg);
+  color:#fff;
+  font-family: "Kaisei HarunoUmi", serif;
+  margin:0;
+  transition:background 200ms linear;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+/* Hover gradient overlay (animated) */
+body::after{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  opacity:0;
+  background: linear-gradient(135deg, #000000 0%, #000000 100%);
+  background-size: 200% 200%;
+  transition: opacity .65s ease-in-out;
+  z-index:1;
+}
+
+body.blur::after{
+  opacity:.85;
+  animation: gradientShift 6s ease-in-out infinite;
+}
+
+@keyframes gradientShift{
+  0%{ background-position: 0% 50%; }
+  50%{ background-position: 100% 50%; }
+  100%{ background-position: 0% 50%; }
+}
+
+main{min-height:100%;}
+article{
+  display:block;
+  width:100%;
+  text-align:right;
+  height:100vh;
+  padding:6rem 4rem;
+  box-sizing:border-box;
+  position:relative;
+  z-index:2;
+}
+
+/* Alternate alignment (left/right) for sections after the hero */
+main article:not(.hero):nth-of-typeN(even) p{
+  text-align:right;
+  margin-left:auto;
+  margin-right:0;
+}
+
+main article:not(.hero):nth-of-typeN(even) h1{
+  text-align:right;
+  margin-left:auto;
+  margin-right:0;
+}
+
+main article:not(.hero):nth-of-type(even) p{
+  text-align: left;   /* 文字を左寄せ */
+  margin-left:0;
+  margin-right:auto;
+}
+
+main article:not(.hero):nth-of-type(even) h1{
+  text-align: left;   /* 文字を左寄せ */
+  margin-left:0;
+  margin-right:auto;
+}
+
+h1{
+  font-size:6rem;
+  font-weight:900;
+  line-height:0.9;
+  margin:0 0.1em;
+}
+
+/* Smaller title only for the first (hero) section */
+article.hero{
+  text-align:center;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  /* add a little more vertical space to the top section */
+  padding-top:8rem;
+  padding-bottom:8rem;
+}
+
+article.hero h1{
+  font-size:2.9rem;
+  line-height:1.2;
+}
+
+article.hero p{
+  margin-left:auto;
+  margin-right:auto;
+  max-width:60rem;
+  font-size:1.2rem;
+  line-height:1.9;
+  margin-top:1.6rem;
+}
+
+article.hero .hero-lead{
+  width:min(92vw, 60rem);
+}
+
+article p{
+  max-width:50ch;
+  margin:1rem 0 0 3rem;
+  font-size:1.75rem;
+  color:rgba(255,255,255,0.95);
+}
+
+/* Button styles (pure CSS version) */
+.btn{
+  position:fixed;
+  left:50%;
+  top:50%;
+  transform:translate(-50%,-50%);
+  display:inline-block;
+  border:8px solid #ee7268; /* slightly lighter than #e74c3c */
+  transition: all .1s ease-in-out;
+  z-index: 3;
+  opacity:0;
+  pointer-events:none;
+  transition: opacity .35s ease, transform .35s ease;
+}
+
+.btn,
+.btn:visited{
+  color: inherit;
+  text-decoration:none;
+}
+
+/* show the button when near the bottom */
+.btn.is-visible{
+  opacity:1;
+  pointer-events:auto;
+}
+
+.btn,
+.btn > span{
+  cursor:pointer;
+}
+
+.btn > span{
+  min-width: 426px;
+}
+
+.btn.active{
+  box-shadow: 2px 2px 4px rgba(0,0,0,.25);
+}
+
+.btn:focus,
+.btn:hover{
+  border-width:14px;
+  border-color:#e74c3c;
+}
+
+.btn-inr{
+  display:inline-block;
+  color:#fff;
+  font-weight:100;
+  font-size:2.4em;
+  line-height:1;
+  text-transform:uppercase;
+  background:#ee7268;
+  padding:1.2em 2.6em;
+  margin:6px;
+  transition: all .1s ease-in-out;
+  position:relative;
+  text-align:center;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.btn:focus .btn-inr,
+.btn:hover .btn-inr{
+  background:#e74c3c;
+  padding:1em 2em;
+  margin:0;
+}
+
+.txt-a,
+.txt-b{
+  position:absolute;
+  left:50%;
+  top:50%;
+  transform:translate(-50%,-50%);
+  width:100%;
+  text-align:center;
+  transition: opacity .2s ease-in-out;
+}
+
+/* default: show txt-a */
+.txt-a{ opacity: 1; }
+.txt-b{ opacity: 0; }
+
+/* on hover/focus: cross-fade */
+.btn:focus .txt-a,
+.btn:hover .txt-a{ opacity: 0; }
+.btn:focus .txt-b,
+.btn:hover .txt-b{ opacity: 1; }
+
+/* Only for the #ffffff section */
+article.text-black,
+article.text-black h1,
+article.text-black p{
+  color:#000;
+}
+
+.clear{clear:both}
+
+@media (max-width:900px){
+  h1{font-size:4.5rem}
+  article{padding:4rem 2rem}
+  article p{max-width:100%; margin:1rem 0 0 0; text-align:left}
+}
+
+
+.section{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+/* 2,4,6... */
+.section:nth-child(even){
+    flex-direction:row;
+    padding-right: 80px;
+}
+
+.section:nth-child(even) article{
+    text-align:left;
+}
+
+/* 1,3,5... */
+.section:nth-child(odd){
+    flex-direction:row-reverse;
+    padding-left: 80px;
+}
+
+.section:nth-child(odd) article{
+    text-align:right;
+}
